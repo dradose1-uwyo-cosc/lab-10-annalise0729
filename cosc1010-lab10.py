@@ -29,7 +29,7 @@ def get_hash(to_hash):
 # You will need to include a try-except-catch block in your code.
 # - The reading of files needs to occur in the try blocks.
 try:
-    path = Path('rockyou.text')
+    path = Path('rockyou.txt')
     rockyou_contents = path.read_text()
     rockyou = rockyou_contents.splitlines()
 except FileNotFoundError:
@@ -42,7 +42,7 @@ except Exception:
 # - Read in the value stored within `hash`.
 #   - You must use a try and except block.
 try:
-    path2 = Path('hash.txt')
+    path2 = Path('hash')
     hash = path2.read_text()
 except FileNotFoundError:
     print(f"'{path2}' file not found. Please put correct file path.")
@@ -64,7 +64,10 @@ try:
         if line_hash == hash:
             print("Password found!")
             print(f"The password is: {line}")
-            exit
+            print(line_hash)
+            break
+    else:
+        print("Password not found :(")
 except Exception:
-    print(f"Error reading 'hash': {Exception}")
+    print(f"Error: {Exception}")
     exit
