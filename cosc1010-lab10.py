@@ -64,7 +64,6 @@ try:
         if line_hash == hash:
             print("Password found!")
             print(f"The password is: {line}")
-            print(line_hash)
             break
     else:
         print("Password not found :(")
